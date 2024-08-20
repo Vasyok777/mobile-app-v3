@@ -1,4 +1,4 @@
-// 'use server'
+'use server'
 
 import { TradingGameServiceClient } from '@/generated/trading.client'
 import { UserServiceClient } from '@/generated/user.client'
@@ -21,12 +21,11 @@ export async function createUser(telegramId: any, nickname: any) {
 	// console.log(telegramId, nickname)
 	return response.response.user
 }
-export async function getUserAvatar(prevState: any, telegramId: any) {
+export async function getUserAvatar(telegramId: any) {
 	const response = await client.getUserAvatar({ telegramId })
-	return {
-		avatarUrl: response?.response?.avatar?.avatarUrl,
-	}
+	return response?.response?.avatar?.avatarUrl
 }
+
 export async function setUserAvatar(telegramId: any, avatarUrl: any) {
 	console.log(telegramId)
 	const response = await client.setUserAvatar({

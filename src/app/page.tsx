@@ -1,4 +1,4 @@
-import Welcome from '@/pages/Welcome'
+import Welcome from '@/poster/Welcome'
 
 export default function Home() {
 	return (

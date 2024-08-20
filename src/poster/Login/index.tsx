@@ -1,6 +1,6 @@
 'use client'
 
-// import { createUser, setUserAvatar } from '@/app/actions.server'
+import { createUser, setUserAvatar } from '@/app/actions.server'
 import Avatar from '@/components/Avatar'
 import { useRouter } from 'next/navigation'
 import { ChangeEvent, useEffect, useState } from 'react'
@@ -35,7 +35,7 @@ const Login = () => {
 				const base64Avatar = reader.result
 				setAvatarPreview(base64Avatar)
 
-				// setUserAvatar(user.id, base64Avatar)
+				setUserAvatar(user.id, base64Avatar)
 				handleCancel()
 			}
 			reader.readAsDataURL(file)
@@ -58,7 +58,7 @@ const Login = () => {
 		const initDataUnsafe = tg?.initDataUnsafe
 		const user = initDataUnsafe?.user
 		console.log(data.nickname)
-		// createUser(user.id, data.nickname)
+		createUser(user.id, data.nickname)
 
 		// router.push('/crafting', { scroll: false })
 	}

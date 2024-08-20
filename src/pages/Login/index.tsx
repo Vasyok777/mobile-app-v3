@@ -1,7 +1,7 @@
 'use client'
 
 import { createUser, setUserAvatar } from '@/app/actions'
-// import Avatar from '@/components/Avatar'
+import Avatar from '@/components/Avatar'
 import { useRouter } from 'next/navigation'
 import { ChangeEvent, useEffect, useState } from 'react'
 import './Login.scss'
@@ -85,7 +85,7 @@ const Login = () => {
 					Welcome to the crew
 				</h1>
 				<div className='login-ava'>
-					{/* <Avatar isEdit={true} src={avatarPreview} /> */}
+					<Avatar isEdit={true} src={avatarPreview} />
 				</div>
 				<div className='login-bottom'>
 					<form className='login-form'>
